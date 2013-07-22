@@ -6,7 +6,12 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
+
+source /usr/share/git/completion/git-prompt.sh
+
+#git line for ps1
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
 
 archey3
 export EDITOR="nano"
